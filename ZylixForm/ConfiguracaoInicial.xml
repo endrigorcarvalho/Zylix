@@ -1,0 +1,16 @@
+﻿<Equipamentos Value="Equipamentos">
+	<Equipamento1 Value="Equipamento 1">
+		<abc Value="ABC"/>
+		<def Value="DEF"/>
+		<ghi Value="GHI"/>
+	</Equipamento1>
+	<Equipamento2 Value="Equipamento 2">
+		<abc Value="ABC2"/>
+		<def Value="DEF2"/>
+		<ghi Value="GHI2"/>
+	</Equipamento2>	
+</Equipamentos>
+
+
+	
+
