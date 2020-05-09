@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using ZylixForm.Entities;
 
 namespace ZylixForm
 {
@@ -25,7 +26,15 @@ namespace ZylixForm
             _xmlDocument = new XmlDocument();
             _xmlDocument.Load(@"C:\Users\endri\OneDrive\Documentos\Visual Studio 2015\Projects\Icon_Zylix\Zylix\ZylixForm\ConfiguracaoInicial.xml");
             loadTreeView(_xmlDocument, treeView1);
-           
+
+            ListaItemConfiguracao listaConfiguracao = new ListaItemConfiguracao();
+            listaConfiguracao.carregaExemplo();
+            
+            List<ItemConfiguracao> list =  listaConfiguracao.PesquisaPorKey("1");
+
+            //listaConfiguracao.CarregarListaDoArquivo(listaConfiguracao.CarregarArquivo);
+
+
         }
 
         private void loadTreeView(XmlDocument xmlDoc, TreeView trv)
