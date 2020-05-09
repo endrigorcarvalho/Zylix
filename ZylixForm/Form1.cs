@@ -27,12 +27,12 @@ namespace ZylixForm
             _xmlDocument.Load(@"C:\Users\endri\OneDrive\Documentos\Visual Studio 2015\Projects\Icon_Zylix\Zylix\ZylixForm\ConfiguracaoInicial.xml");
             loadTreeView(_xmlDocument, treeView1);
 
-            ListaItemConfiguracao listaConfiguracao = new ListaItemConfiguracao();
-            listaConfiguracao.carregaExemplo();
-            
-            List<ItemConfiguracao> list =  listaConfiguracao.PesquisaPorKey("1");
+            Arquivo arquivoCSV = new ArquivoCSV(@"C:\Users\endri\OneDrive\Documentos\Visual Studio 2015\Projects\Icon_Zylix\Zylix\ZylixForm\ArquivoCSV.csv");
+            ListaItemConfiguracao lista = new ListaItemConfiguracao();
+            lista.CarregarListaDoArquivo(arquivoCSV.LerArquivo);
 
-            //listaConfiguracao.CarregarListaDoArquivo(listaConfiguracao.CarregarArquivo);
+            List<ItemConfiguracao> listParcial = lista.PesquisaPorKey("2");
+
 
 
         }

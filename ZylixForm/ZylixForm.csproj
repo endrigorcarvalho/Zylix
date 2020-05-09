@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Arquivo.cs" />
+    <Compile Include="Entities\ArquivoCSV.cs" />
     <Compile Include="Entities\ItemConfiguracao.cs" />
     <Compile Include="Entities\ListaItemConfiguracao.cs" />
     <Compile Include="Form1.cs">

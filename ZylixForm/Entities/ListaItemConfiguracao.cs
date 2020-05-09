@@ -32,9 +32,16 @@ namespace ZylixForm.Entities
             return ListaConfiguracao.Where(p => p.Key == key).ToList();
         }
 
-        public void CarregarListaDoArquivo(Func<List<ItemConfiguracao>> funcaoLeituraArquivo)
+        public void CarregarListaDoArquivo(Func<object> funcaoLeituraArquivo)
         {
-            List<ItemConfiguracao> valores = funcaoLeituraArquivo.Invoke();
+            List<ItemConfiguracao> valores = (List<ItemConfiguracao>)funcaoLeituraArquivo.Invoke();
+
+           /* if (!funcaoLeituraArquivo.GetType().Equals(typeof(List<ItemConfiguracao>)))
+            {
+                return;
+            }
+            */
+            
 
             ListaConfiguracao.Clear();
             foreach(var item in valores)
