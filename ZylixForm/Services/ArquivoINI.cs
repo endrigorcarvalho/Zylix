@@ -22,7 +22,7 @@ namespace ZylixForm.Services
         {
 
 
-            string path = string.Format("{0}\\Files\\Config.ini", Directory.GetCurrentDirectory());
+            string path = string.Format("{0}\\Config.ini", Directory.GetCurrentDirectory());
             IniFile = new INIFile(path);
 
             if (!File.Exists(path))

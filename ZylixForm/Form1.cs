@@ -169,6 +169,11 @@ namespace ZylixForm
                     Arquivo arquivoCSV = new ArquivoCSV(filePath[1]);
                     lista.CarregarListaDoArquivo(arquivoCSV.LerArquivo);
 
+                    treeView1.TopNode.Collapse(true);
+
+                    ListViewItemConfiguracao list = new ListViewItemConfiguracao(listView1);
+                    list.limparListaItemConfiguracao();
+
                 }
             }
         }
