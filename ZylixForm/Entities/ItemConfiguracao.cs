@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZylixForm.Entities
 {
-    class ItemConfiguracao
+    public class ItemConfiguracao
     {
         public int Id { get; set; }
         public string Description { get; set; }

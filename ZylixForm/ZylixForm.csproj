@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ListViewItemConfiguracao.cs" />
     <Compile Include="Entities\Arquivo.cs" />
     <Compile Include="Entities\ArquivoCSV.cs" />
+    <Compile Include="Entities\ArquivoXML.cs" />
     <Compile Include="Entities\ItemConfiguracao.cs" />
     <Compile Include="Entities\ListaItemConfiguracao.cs" />
     <Compile Include="Form1.cs">
@@ -56,10 +58,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEdicaoItemConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEdicaoItemConfiguracao.Designer.cs">
+      <DependentUpon>FormEdicaoItemConfiguracao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEdicaoItemConfiguracao.resx">
+      <DependentUpon>FormEdicaoItemConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

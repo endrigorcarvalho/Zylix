@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ZylixForm.Entities
 {
-    class ListaItemConfiguracao
+     public class ListaItemConfiguracao
     {
-        List<ItemConfiguracao> ListaConfiguracao = new List<ItemConfiguracao>();
+        public List<ItemConfiguracao> ListaConfiguracao = new List<ItemConfiguracao>();
 
         public void AdicionarLista(ItemConfiguracao item)
         {
@@ -52,6 +52,25 @@ namespace ZylixForm.Entities
 
         }
         
+
+        public ItemConfiguracao GetItemConfiguracaoPorKey(int id)
+        {
+            return ListaConfiguracao.Where(p => p.Id == id).First();
+        }
+
+        public void UpdateItemConfiguracao(int id, string description, string value, string commments)
+        {
+            ItemConfiguracao item = ListaConfiguracao.Where(p => p.Id == id).First();
+            if(item == null)
+            {
+                return;
+            }
+
+            item.Description = description;
+            item.Value = value;
+            item.Comments = commments;
+        }
+
         public void carregaExemplo()
         {
             ListaConfiguracao.Add(new ItemConfiguracao(ListaConfiguracao.Count, string.Format("Description {0}", ListaConfiguracao.Count), string.Format("Value {0}", ListaConfiguracao.Count), string.Format("comments {0}", ListaConfiguracao.Count), "0"));

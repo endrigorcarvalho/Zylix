@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
+
 namespace ZylixForm.Entities
 {
     class ArquivoCSV : Arquivo
     {
-
-
-        public ArquivoCSV(string pathArquivo)
+                
+        public ArquivoCSV(string pathArquivo):base(pathArquivo)
         {
-            PathArquivo = pathArquivo;
+            
         }
+        
+
 
         public override object LerArquivo()
         {
@@ -31,7 +34,25 @@ namespace ZylixForm.Entities
             }
         }
 
+        public override void GravarArquivo(object objeto)
+        {
+            
+            if (!(objeto is ListaItemConfiguracao))
+            {
+                return;
+            }
 
+            ListaItemConfiguracao list = (ListaItemConfiguracao)objeto;
 
+            File.Delete(PathArquivo);
+
+            using (StreamWriter stream = File.AppendText(PathArquivo))
+            {
+                foreach (var item in list.ListaConfiguracao)
+                {
+                    stream.WriteLine(string.Format("{0},{1},{2},{3},{4}", item.Id, item.Description, item.Value, item.Comments, item.Key));
+                }
+            }
+        }
     }
 }
