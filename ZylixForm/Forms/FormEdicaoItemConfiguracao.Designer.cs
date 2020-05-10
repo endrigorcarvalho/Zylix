@@ -154,7 +154,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormEdicaoItemConfiguracao";
             this.Text = "FormEdicaoItemConfiguracao";
-            this.Load += new System.EventHandler(this.FormEdicaoItemConfiguracao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

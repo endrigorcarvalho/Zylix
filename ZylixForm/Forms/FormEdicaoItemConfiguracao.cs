@@ -53,13 +53,16 @@ namespace ZylixForm.Forms
 
         private void btOk_Click(object sender, EventArgs e)
         {
-            FuncaoUpdateLista.Invoke(int.Parse(LabelId.Text), tbDescription.Text, tbValue.Text, tbComments.Text);
-            FuncaoUpdateListView.Invoke();
-            FuncaoGravaArquivoCSV.Invoke();
-
-
-
-
+            try 
+            {
+                FuncaoUpdateLista.Invoke(int.Parse(LabelId.Text), tbDescription.Text, tbValue.Text, tbComments.Text);
+                FuncaoUpdateListView.Invoke();
+                FuncaoGravaArquivoCSV.Invoke();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             this.Close();
         }
@@ -68,9 +71,6 @@ namespace ZylixForm.Forms
         {
             id = int.Parse(LabelId.Text);
         }
-        private void FormEdicaoItemConfiguracao_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

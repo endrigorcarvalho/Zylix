@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ListViewItemConfiguracao.cs" />
+    <Compile Include="Entities\Exceptions\DomainException.cs" />
     <Compile Include="Services\IniFiles.cs" />
     <Compile Include="Services\Arquivo.cs" />
     <Compile Include="Services\ArquivoCSV.cs" />
