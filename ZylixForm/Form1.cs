@@ -18,20 +18,22 @@ namespace ZylixForm
 {
     public partial class Form1 : Form
     {
-       
+        private ListaItemConfiguracao lista = new ListaItemConfiguracao();
+        private Arquivo arquivoIni;
+
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        ListaItemConfiguracao lista = new ListaItemConfiguracao();
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
+                      
 
-            
-
-            Arquivo arquivoIni = new ArquivoINI(string.Format("{0}{1}Config.ini", Directory.GetCurrentDirectory(), Path.DirectorySeparatorChar) );
+            arquivoIni = new ArquivoINI(null);
             object pathFilesObject = arquivoIni.LerArquivo();
             if(!(pathFilesObject is string[]))
             {
@@ -136,6 +138,39 @@ namespace ZylixForm
         private void button3_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+        }
+
+
+        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //string path = string.Format("{0}{1}Files{1}Config.ini", Directory.GetCurrentDirectory(), Path.AltDirectorySeparatorChar);
+
+            
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = string.Format("{0}\\Files", Directory.GetCurrentDirectory());
+                openFileDialog.Filter = "csv files (*.csv)|*.csv";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    string filePathCSV = openFileDialog.FileName;
+
+                    string[] filePath = new string[2];
+                    filePath = (string[])arquivoIni.LerArquivo();
+
+                    filePath[1] = filePathCSV;
+                    arquivoIni.GravarArquivo(filePath);
+
+                    Arquivo arquivoCSV = new ArquivoCSV(filePath[1]);
+                    lista.CarregarListaDoArquivo(arquivoCSV.LerArquivo);
+
+                }
+            }
         }
     }
 }

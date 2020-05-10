@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ZylixForm.Services
+
 {
     public abstract class Arquivo
     {

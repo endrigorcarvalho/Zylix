@@ -22,12 +22,11 @@ namespace ZylixForm.Services
         {
 
 
-            string path = string.Format("{0}{1}Files{1}Config.ini", Directory.GetCurrentDirectory(), Path.AltDirectorySeparatorChar);
-            
-            if(!Directory.Exists(path))
-            {
-                IniFile = new INIFile(path);
+            string path = string.Format("{0}\\Files\\Config.ini", Directory.GetCurrentDirectory());
+            IniFile = new INIFile(path);
 
+            if (!File.Exists(path))
+            {
                 path = string.Format("{0}{1}Files{1}FileCSV.csv", Directory.GetCurrentDirectory(), Path.AltDirectorySeparatorChar);
                 IniFile.IniWriteValue("Configuration", "Path File CSV", path);
 
@@ -51,6 +50,8 @@ namespace ZylixForm.Services
             IniFile.IniWriteValue("Configuration", "Path File XML", PathArquivoXML);
             IniFile.IniWriteValue("Configuration", "Path File CSV", PathArquivoCSV);
         }
+
+        
 
         public override object LerArquivo()
         {
