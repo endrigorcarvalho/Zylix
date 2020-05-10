@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace ZylixForm.Entities
+namespace ZylixForm.Services
 {
     public class ArquivoXML : Arquivo
     {

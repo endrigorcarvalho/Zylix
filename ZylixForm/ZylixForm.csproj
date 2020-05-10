@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\ListViewItemConfiguracao.cs" />
-    <Compile Include="Entities\Arquivo.cs" />
-    <Compile Include="Entities\ArquivoCSV.cs" />
-    <Compile Include="Entities\ArquivoXML.cs" />
+    <Compile Include="Services\IniFiles.cs" />
+    <Compile Include="Services\Arquivo.cs" />
+    <Compile Include="Services\ArquivoCSV.cs" />
+    <Compile Include="Services\ArquivoINI.cs" />
+    <Compile Include="Services\ArquivoXML.cs" />
     <Compile Include="Entities\ItemConfiguracao.cs" />
     <Compile Include="Entities\ListaItemConfiguracao.cs" />
     <Compile Include="Form1.cs">
@@ -81,6 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Files\FileCSV.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,7 +100,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConfiguracaoInicial.xml">
+    <Content Include="Files\FileXML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

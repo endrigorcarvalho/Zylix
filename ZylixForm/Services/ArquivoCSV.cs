@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
+using ZylixForm.Entities;
 
-namespace ZylixForm.Entities
+namespace ZylixForm.Services
 {
     class ArquivoCSV : Arquivo
     {
@@ -15,9 +16,7 @@ namespace ZylixForm.Entities
         {
             
         }
-        
-
-
+  
         public override object LerArquivo()
         {
             List<ItemConfiguracao> list = new List<ItemConfiguracao>();

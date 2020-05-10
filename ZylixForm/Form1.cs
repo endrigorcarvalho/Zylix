@@ -11,15 +11,14 @@ using System.Xml;
 using ZylixForm.Entities;
 using ZylixForm.Components;
 using ZylixForm.Forms;
-using System.Security.Cryptography;
+using ZylixForm.Services;
+using System.IO;
 
 namespace ZylixForm
 {
     public partial class Form1 : Form
     {
-        private XmlDocument _xmlDocument;
-
-        
+       
 
         public Form1()
         {
@@ -30,11 +29,20 @@ namespace ZylixForm
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            
 
-            ArquivoXML arquivoXML = new ArquivoXML(@"C:\Users\endri\OneDrive\Documentos\Visual Studio 2015\Projects\Icon_Zylix\Zylix\ZylixForm\ConfiguracaoInicial.xml");
+            Arquivo arquivoIni = new ArquivoINI(string.Format("{0}{1}Config.ini", Directory.GetCurrentDirectory(), Path.DirectorySeparatorChar) );
+            object pathFilesObject = arquivoIni.LerArquivo();
+            if(!(pathFilesObject is string[]))
+            {
+                return;
+            }
+            string[] pathFile = (string[])pathFilesObject;
+                   
+            Arquivo arquivoXML = new ArquivoXML(pathFile[0]);
             loadTreeView((XmlDocument)arquivoXML.LerArquivo(), treeView1);
 
-            Arquivo arquivoCSV = new ArquivoCSV(@"C:\Users\endri\OneDrive\Documentos\Visual Studio 2015\Projects\Icon_Zylix\Zylix\ZylixForm\ArquivoCSV.csv");
+            Arquivo arquivoCSV = new ArquivoCSV(pathFile[1]);
             lista.CarregarListaDoArquivo(arquivoCSV.LerArquivo);
 
             
