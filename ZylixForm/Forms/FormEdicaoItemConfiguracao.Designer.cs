@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LabelId = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,19 +40,10 @@
             this.tbComments = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Editar";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 81);
+            this.label2.Location = new System.Drawing.Point(80, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 17);
             this.label2.TabIndex = 1;
@@ -62,16 +52,17 @@
             // LabelId
             // 
             this.LabelId.AutoSize = true;
-            this.LabelId.Location = new System.Drawing.Point(125, 81);
+            this.LabelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelId.Location = new System.Drawing.Point(111, 43);
             this.LabelId.Name = "LabelId";
-            this.LabelId.Size = new System.Drawing.Size(24, 17);
+            this.LabelId.Size = new System.Drawing.Size(26, 17);
             this.LabelId.TabIndex = 2;
             this.LabelId.Text = "00";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 114);
+            this.label3.Location = new System.Drawing.Point(22, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 3;
@@ -79,7 +70,7 @@
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(116, 264);
+            this.btOk.Location = new System.Drawing.Point(111, 226);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(88, 32);
             this.btOk.TabIndex = 4;
@@ -89,7 +80,7 @@
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(242, 264);
+            this.btCancel.Location = new System.Drawing.Point(237, 226);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(88, 32);
             this.btCancel.TabIndex = 5;
@@ -99,7 +90,7 @@
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(116, 114);
+            this.tbDescription.Location = new System.Drawing.Point(111, 76);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(214, 22);
             this.tbDescription.TabIndex = 6;
@@ -107,7 +98,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 159);
+            this.label4.Location = new System.Drawing.Point(57, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 7;
@@ -116,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 203);
+            this.label5.Location = new System.Drawing.Point(22, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 8;
@@ -124,14 +115,14 @@
             // 
             // tbValue
             // 
-            this.tbValue.Location = new System.Drawing.Point(116, 159);
+            this.tbValue.Location = new System.Drawing.Point(111, 121);
             this.tbValue.Name = "tbValue";
             this.tbValue.Size = new System.Drawing.Size(214, 22);
             this.tbValue.TabIndex = 9;
             // 
             // tbComments
             // 
-            this.tbComments.Location = new System.Drawing.Point(116, 203);
+            this.tbComments.Location = new System.Drawing.Point(111, 165);
             this.tbComments.Name = "tbComments";
             this.tbComments.Size = new System.Drawing.Size(214, 22);
             this.tbComments.TabIndex = 10;
@@ -140,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 369);
+            this.ClientSize = new System.Drawing.Size(368, 316);
             this.Controls.Add(this.tbComments);
             this.Controls.Add(this.tbValue);
             this.Controls.Add(this.label5);
@@ -151,17 +142,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LabelId);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormEdicaoItemConfiguracao";
-            this.Text = "FormEdicaoItemConfiguracao";
+            this.Text = "Edição Item";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LabelId;
         private System.Windows.Forms.Label label3;

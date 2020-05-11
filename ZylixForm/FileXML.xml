@@ -1,0 +1,30 @@
+﻿<Equipamentos Value="Equipamentos" Tag ="">
+	<Arm1 Value="Arm 1" Tag ="">
+		<GeneralPorpouse Value="General Porpouse" Tag ="Arm1/GeneralPorpouse"/>
+		<FlowControl Value="Flow Control" Tag ="Arm1/FlowControl"/>
+		<VolumeAccuracy Value="Volume Accuracy" Tag ="Arm1/VolumeAccuracy"/>
+	</Arm1>
+	
+	<Arm2 Value="Arm 2" Tag ="">
+		<GeneralPorpouse Value="General Porpouse" Tag ="Arm2/GeneralPorpouse"/>
+		<FlowControl Value="Flow Control" Tag ="Arm2/FlowControl"/>
+		<VolumeAccuracy Value="Volume Accuracy" Tag ="Arm2/VolumeAccuracy"/>
+	</Arm2>
+
+	<Arm3 Value="Arm 3" Tag ="">
+		<GeneralPorpouse Value="General Porpouse" Tag ="Arm3/GeneralPorpouse"/>
+		<FlowControl Value="Flow Control" Tag ="Arm3/FlowControl"/>
+		<VolumeAccuracy Value="Volume Accuracy" Tag ="Arm3/VolumeAccuracy"/>
+	</Arm3>
+
+	<Arm4 Value="Arm 4" Tag ="">
+		<GeneralPorpouse Value="General Porpouse" Tag ="Arm4/GeneralPorpouse"/>
+		<FlowControl Value="Flow Control" Tag ="Arm4/FlowControl"/>
+		<VolumeAccuracy Value="Volume Accuracy" Tag ="Arm4/VolumeAccuracy"/>
+	</Arm4>	
+	
+</Equipamentos>
+
+
+	
+
