@@ -8,7 +8,7 @@ namespace ZylixForm.Services
 
 {
     /// <summary>
-    /// Classe base para arquivos
+    /// Classe base para manipulação de arquivos
     /// </summary>
     public abstract class Arquivo
     {

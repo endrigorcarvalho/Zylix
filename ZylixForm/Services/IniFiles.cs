@@ -4,6 +4,9 @@ using System.Text;
 
 namespace ZylixForm.Services
 {
+    /// <summary>
+    /// Classe auxiliar retirada da internet. 
+    /// </summary>
     public class INIFile
 {
     public string path { get; private set; }

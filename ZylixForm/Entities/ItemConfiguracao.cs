@@ -12,15 +12,15 @@ namespace ZylixForm.Entities
         public string Description { get; set; }
         public string Value { get; set; }
         public string Comments { get; set; }
-        public string Key { get; set; }
+        public string Tag { get; set; }
 
-        public ItemConfiguracao(int id, string description, string value, string comments, string key)
+        public ItemConfiguracao(int id, string description, string value, string comments, string tag)
         {
             Id = id;
             Description = description;
             Value = value;
             Comments = comments;
-            Key = key;
+            Tag = tag;
         }
     }
 }

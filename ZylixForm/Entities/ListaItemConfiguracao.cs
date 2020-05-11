@@ -8,6 +8,9 @@ using ZylixForm.Entities.Exceptions;
 
 namespace ZylixForm.Entities
 {
+    /// <summary>
+    /// Classe contendo a lista com os itens do arquivo CSV.
+    /// </summary>
      public class ListaItemConfiguracao
     {
         public List<ItemConfiguracao> ListaConfiguracao = new List<ItemConfiguracao>();
@@ -19,23 +22,37 @@ namespace ZylixForm.Entities
 
         }
 
-
+        /// <summary>
+        /// Remove da Lista
+        /// </summary>
+        /// <param name="item"></param>
         public void RemoverLista(ItemConfiguracao item)
         {
             ListaConfiguracao.Remove(item);
         }
 
+        /// <summary>
+        /// Limpa Lista
+        /// </summary>
         public void LimpaLista()
         {
             ListaConfiguracao.Clear();
         }
 
-        public List<ItemConfiguracao> PesquisaPorKey(string key)
-        {            
-
-            return ListaConfiguracao.Where(p => p.Key == key).ToList();
+        /// <summary>
+        /// Retorna lista contendo itens que contém o valor da tag recebida.
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        public List<ItemConfiguracao> PesquisaPorTag(string tag)
+        {        
+            return ListaConfiguracao.Where(p => p.Tag == tag).ToList();
         }
 
+        /// <summary>
+        /// Carrega a lista com os itens recebidos da função Leitura de Arquivo CSV (Delegate).
+        /// </summary>
+        /// <param name="funcaoLeituraArquivo">Delegate com a função de leitura do arquivo CSV. Função deve retornar um tipo List<ItemConfiguracao></param>
         public void CarregarListaDoArquivo(Func<object> funcaoLeituraArquivo)
         {
 
@@ -62,13 +79,24 @@ namespace ZylixForm.Entities
             }
             
         }
-        
 
-        public ItemConfiguracao GetItemConfiguracaoPorKey(int id)
+        /// <summary>
+        /// Retorna um item da lista por ID
+        /// </summary>
+        /// <param name="id">Id do item</param>
+        /// <returns>objeto ItemConfiguracao</returns>
+        public ItemConfiguracao GetItemConfiguracaoPorId(int id)
         {
             return ListaConfiguracao.Where(p => p.Id == id).First();
         }
 
+        /// <summary>
+        /// Update do item da lista localizado por Id
+        /// </summary>
+        /// <param name="id">Id do ItemConfiguracao</param>
+        /// <param name="description">Description do ItemConfiguracao</param>
+        /// <param name="value">Value do ItemConfiguracao</param>
+        /// <param name="commments">Comments do ItemConfiguracao</param>
         public void UpdateItemConfiguracao(int id, string description, string value, string commments)
         {
             ItemConfiguracao item = ListaConfiguracao.Where(p => p.Id == id).First();

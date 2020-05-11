@@ -17,6 +17,18 @@ using System.IO;
 
 namespace ZylixForm
 {
+    /// <summary>
+    ///     O Software funciona basicamente utiliza 3 arquivos padrões, tendo objetivo de possibilitar as alterações de valores sem a necessidade de alteração do software
+    ///         - Arquivo .Ini - Arquivo contendo os endereços do arquivo .CSV e .XMV. O nome deve ser "Config.ini"
+    ///         - Arquivo .XML - Arquivo .XML com os nodos mostrado para o usuário na treeView. Cada nodo deve conter a chave "Value" que será o nome mostrado na treeView e a chave "Tag" que será o valor relacionado com o item do arquivo .CSV
+    ///         - Arquivo .CSV - Arquivo .CSV com os itens mostrado na ListView. O Arquivo Obrigatoriamente dever ter os seguintes valores: ID, DESCRIPTION, VALUE, COMMENTS E TAG. O valor da "TAG" deverá ser o mesmo valor na chave "Tag" do arquivo .XML para poderem ser relacionados.
+    ///
+    ///     O software inicia lendo o arquivo .Ini e pegando os endereços dos arquivos .CSV e .XML. Após ele faz a carga da TreeView (treeView1) com dados do arquivo .Xml e do ListView(listView1) com os dados do arquivo .CSV.
+    ///     Quando o usuário clicar no nodo da TreeView, deve se mostrar os dados relacionados através da chave "Tag" na ListView.
+    ///     Quando o usuário clicar em um item da ListView, irá abrir uma janela que possibilitará a alteração dos dados e posterior gravação da alteração no arquivo .CSV
+    ///     Quando o usuário clicar no menu File -> Load, deve-se abrir uma janela para o usuário localizar o arquivo .CSV que desejar e após esse endereço é gravado no arquivo .Ini
+    /// 
+    /// </summary>
     public partial class Form1 : Form
     {
         private ListaItemConfiguracao _listaItemConfiguracao = new ListaItemConfiguracao();
@@ -29,6 +41,11 @@ namespace ZylixForm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Responsável por carregar os arquivos .Ini e .XML e .CSV e posteriormente carregar a TreeView e ListView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -58,6 +75,11 @@ namespace ZylixForm
             
         }
 
+        /// <summary>
+        /// Adicionar um nodo na TreeView
+        /// </summary>
+        /// <param name="xmlDoc"></param>
+        /// <param name="trv"></param>
         private void loadTreeView(XmlDocument xmlDoc, TreeView trv)
         {
             try
@@ -71,6 +93,11 @@ namespace ZylixForm
             }
         }
 
+        /// <summary>
+        /// Função recursiva que faz a leitura do arquivo .XML e popula a TreeView.
+        /// </summary>
+        /// <param name="parent_nodes"></param>
+        /// <param name="xml_node"></param>
         private void AddTreeViewNode(TreeNodeCollection parent_nodes, XmlNode xml_node)
         {
             try
@@ -101,6 +128,12 @@ namespace ZylixForm
 
         }
 
+        /// <summary>
+        /// Função chamada depois do usuário selecionar um nodo da treeView. Chama a função da classe de controle 
+        /// (ListViewItemConfiguracao.adicionarListaItemConfiguracao()) passando o valor da Tag do nodo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             try
@@ -129,6 +162,11 @@ namespace ZylixForm
             }
         }
 
+        /// <summary>
+        /// Função chamada quando um item da listView é clicado. A função abre uma janela para alteração dos valores do item selecionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             try
@@ -213,5 +251,7 @@ namespace ZylixForm
                 MessageBox.Show(err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

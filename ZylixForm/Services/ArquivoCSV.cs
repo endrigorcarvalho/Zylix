@@ -10,6 +10,9 @@ using ZylixForm.Entities.Exceptions;
 
 namespace ZylixForm.Services
 {
+    /// <summary>
+    /// Classe para manipulação de arquivos CSV
+    /// </summary>
     class ArquivoCSV : Arquivo
     {
                 
@@ -17,7 +20,11 @@ namespace ZylixForm.Services
         {
             
         }
-  
+
+        /// <summary>
+        /// Leitura de arquivos CSV.
+        /// </summary>
+        /// <returns>Lista do tipo List<ItemConfiguracao> com conteúdo do arquivo CSV </returns>
         public override object LerArquivo()
         {
             List<ItemConfiguracao> list = new List<ItemConfiguracao>();
@@ -48,6 +55,10 @@ namespace ZylixForm.Services
                         
         }
 
+        /// <summary>
+        /// Grava arquivo CSV.
+        /// </summary>
+        /// <param name="objeto">Objeto contendo o tipo ListaItemConfiguracao.</param>
         public override void GravarArquivo(object objeto)
         {
             
@@ -73,7 +84,7 @@ namespace ZylixForm.Services
                 {
                     foreach (var item in list.ListaConfiguracao)
                     {
-                        stream.WriteLine(string.Format("{0},{1},{2},{3},{4}", item.Id, item.Description, item.Value, item.Comments, item.Key));
+                        stream.WriteLine(string.Format("{0},{1},{2},{3},{4}", item.Id, item.Description, item.Value, item.Comments, item.Tag));
                     }
 
                     stream.Close();

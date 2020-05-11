@@ -16,10 +16,12 @@ namespace ZylixForm.Services
 
         private INIFile IniFile;
 
-
+        /// <summary>
+        /// Classe para manipulação do arquivo .INI
+        /// </summary>
+        /// <param name="pathArquivo">Path do Arquivo .Ini</param>
         public ArquivoINI(string pathArquivo) : base(pathArquivo)
         {
-
 
             string path = string.Format("{0}\\Config.ini", Directory.GetCurrentDirectory());
             PathArquivoINI = path;
@@ -42,12 +44,14 @@ namespace ZylixForm.Services
                 }
 
             }
-
-
-
-
-
         }
+
+        /// <summary>
+        /// Grava o arquivo .Ini
+        /// </summary>
+        /// <param name="objeto">Objeto contendo string[2] sendo a primeira posição com o path do arquivo XML e a 
+        /// segunda posição com o path do arquivo CSV.
+        /// </param>
         public override void GravarArquivo(object objeto)
         {
             if (!(objeto is string[]))
@@ -70,6 +74,11 @@ namespace ZylixForm.Services
 
         }
 
+        /// <summary>
+        /// Leitura do arquivo .Ini
+        /// </summary>
+        /// <returns>Objeto contendo string[2] sendo a primeira posição com o path do arquivo XML e a 
+        /// segunda posição com o path do arquivo CSV.</returns>
         public override object LerArquivo()
         {
             string[] pathArquivos = new string[2];
@@ -83,8 +92,6 @@ namespace ZylixForm.Services
             {
                 PathArquivoXML = pathArquivos[0] = IniFile.IniReadValue("Configuration", "Path File XML");
                 PathArquivoCSV = pathArquivos[1] = IniFile.IniReadValue("Configuration", "Path File CSV");
-
-
             }
             catch (Exception e)
             {
@@ -94,6 +101,10 @@ namespace ZylixForm.Services
 
         }
 
+        /// <summary>
+        /// Retorna Path do arquivo XML
+        /// </summary>
+        /// <returns>string com Path do arquivo XML</returns>
         public string getArquivoXML()        
         {
             return PathArquivoXML;
